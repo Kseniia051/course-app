@@ -1,0 +1,87 @@
+.app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.app-header {
+  border-bottom: 3px solid #e2e8f0;
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: #1b4d3e; 
+  font-size: 2.8rem;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.app-description {
+  color: #4a5568;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.books-section {
+  margin-top: 40px;
+}
+
+h2 {
+  color: #2c5282; 
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.empty-state {
+  background-color: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 56px 32px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease;
+}
+
+.empty-state:hover {
+  border-color: #1b4d3e; 
+}
+
+.empty-state p {
+  color: #64748b;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+}
+
+.empty-state .hint {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 600px) {
+  .app {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .empty-state {
+    padding: 32px 16px;
+  }
+}
