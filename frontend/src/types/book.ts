@@ -10,3 +10,5 @@ export type Book = {
   notes: string;
   createdAt: string;
 };
+// Тип для черновика формы — все поля книги, кроме автоматически генерируемого id
+export type BookDraft = Omit<Book, 'id'>;

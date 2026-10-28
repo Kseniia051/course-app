@@ -1,13 +1,37 @@
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
+import { BookForm } from '../components/BookForm';
+import type { BookDraft } from '../types/book';
 
-export function NewBookPage() {
+type NewBookPageProps = {
+  onCreate: (draft: BookDraft) => string;
+};
+
+const emptyBook: BookDraft = {
+  title: '',
+  author: '',
+  genre: '',
+  status: 'to_read',
+  rating: 0,
+  notes: '',
+  createdAt: new Date().toISOString().split('T')[0]
+};
+
+export function NewBookPage({ onCreate }: NewBookPageProps) {
+  const navigate = useNavigate();
+
+  function handleSave(draft: BookDraft) {
+    const id = onCreate(draft);
+    navigate(`/books/${id}`);
+  }
+
   return (
     <section>
-      <h1>Добавление новой книги</h1>
-      <div className="stub-message">
-        <p>⚠️ <strong>Информационное сообщение:</strong> Форма добавления, валидация полей и интерактивное сохранение будут реализованы в Лабораторной работе №3.</p>
-      </div>
-      <Link to="/books" className="back-link">← Отмена и возврат к списку</Link>
+      <h2>Добавление новой книги</h2>
+      <BookForm
+        initialValues={emptyBook}
+        onSave={handleSave}
+        onCancel={() => navigate('/books')}
+      />
     </section>
   );
 }
